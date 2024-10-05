@@ -6,6 +6,10 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import emailjs from "@emailjs/browser";
+import CalcPhoto from './assets/calc.jpg';
+import MoviePhoto from './assets/movie-booking.png';
+import NoteTakingPhoto from './assets/note-taking.png';
+import TodoList from './assets/to-do-list.png';
 import { message } from "antd";
 
 const App = () => {
@@ -94,7 +98,7 @@ const App = () => {
           "Mongoose",
           "Stripe",
         ],
-        image: "./src/assets/movie-booking.png",
+        image: `${MoviePhoto}`,
         link: "https://moviease.onrender.com"
       },
       {
@@ -109,7 +113,7 @@ const App = () => {
           "CSS",
           "Context-API",
         ],
-        image: "./src/assets/to-do-list.png",
+        image: `${TodoList}`,
         link: "https://kandoo.netlify.app/"
       },
       {
@@ -117,7 +121,7 @@ const App = () => {
         description:
           "This is a responsive calculator web application that supports basic arithmetic operations and keeps a history of calculations. The application features a clean and modern design with support for light and dark modes, and it is built using HTML, CSS, Tailwind CSS, and JavaScript.",
         technologies: ["Javascript", "HTML", "CSS", "Tailwind", "UUID"],
-        image: "./src/assets/calc.jpg",
+        image: `${CalcPhoto}`,
         link: "https://sonic-calc.netlify.app"
       },
     ];
