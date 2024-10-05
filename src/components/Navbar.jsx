@@ -21,14 +21,14 @@ const Navbar = ({
       <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <div className="absolute rounded-full left-8">
+            <div className="absolute rounded-full left-6">
                 <img src={profilePicture} alt="profile-pic" className="rounded-full w-10 h-10  aspect-auto self-center"/>
             </div>
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-2xl font-bold md:pl-3 pl-16"
+              className="text-2xl font-bold md:pl-12 pl-16"
             >
               Somen Rajak
             </motion.h1>
