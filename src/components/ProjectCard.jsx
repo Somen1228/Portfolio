@@ -7,7 +7,7 @@ const ProjectCard = ({ project, darkMode }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`rounded-lg overflow-hidden shadow-lg ${
+      className={`rounded-lg overflow-hidden shadow-lg flex flex-col justify-between ${
         darkMode ? "bg-gray-800" : "bg-white"
       }`}
     >
@@ -16,7 +16,7 @@ const ProjectCard = ({ project, darkMode }) => {
         alt={project.name}
         className="w-full h-60 object-cover"
       />
-      <div className="p-6 flex flex-col">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
         <p className={`mb-4 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
           {project.description}
@@ -35,15 +35,19 @@ const ProjectCard = ({ project, darkMode }) => {
             </span>
           ))}
         </div>
-        <a target="_blank" rel="noreferrer" href={project.link}>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-blue-500 text-white px-4 py-2 rounded-full font-semibold shadow-md hover:bg-blue-600 transition duration-300"
-          >
-            Project Link
-          </motion.button>
-        </a>
+
+        {/* Anchor the button at the bottom */}
+        <div className="mt-auto">
+          <a target="_blank" rel="noreferrer" href={project.link}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-blue-500 text-white px-4 py-2 rounded-full font-semibold shadow-md hover:bg-blue-600 transition duration-300 w-full"
+            >
+              Project Link
+            </motion.button>
+          </a>
+        </div>
       </div>
     </motion.div>
   );
