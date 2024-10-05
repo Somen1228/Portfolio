@@ -12,7 +12,9 @@ const Contact = ({ userData, handleFormChange, handleSubmit, darkMode }) => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className={`${darkMode ? "bg-gray-800" : "bg-white"} rounded-lg p-6 shadow-lg`}
+          className={`${
+            darkMode ? "bg-gray-800" : "bg-white"
+          } rounded-lg p-6 shadow-lg`}
         >
           <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -26,7 +28,9 @@ const Contact = ({ userData, handleFormChange, handleSubmit, darkMode }) => {
                 value={userData.name}
                 onChange={(e) => handleFormChange(e)}
                 className={`w-full px-3 py-2 rounded-md ${
-                  darkMode ? "bg-gray-700 text-white" : "bg-gray-100 text-gray-900"
+                  darkMode
+                    ? "bg-gray-700 text-white"
+                    : "bg-gray-100 text-gray-900"
                 }`}
                 required
               />
@@ -41,7 +45,9 @@ const Contact = ({ userData, handleFormChange, handleSubmit, darkMode }) => {
                 value={userData.email}
                 onChange={(e) => handleFormChange(e)}
                 className={`w-full px-3 py-2 rounded-md ${
-                  darkMode ? "bg-gray-700 text-white" : "bg-gray-100 text-gray-900"
+                  darkMode
+                    ? "bg-gray-700 text-white"
+                    : "bg-gray-100 text-gray-900"
                 }`}
                 required
               />
@@ -56,7 +62,9 @@ const Contact = ({ userData, handleFormChange, handleSubmit, darkMode }) => {
                 value={userData.message}
                 onChange={(e) => handleFormChange(e)}
                 className={`w-full px-3 py-2 rounded-md ${
-                  darkMode ? "bg-gray-700 text-white" : "bg-gray-100 text-gray-900"
+                  darkMode
+                    ? "bg-gray-700 text-white"
+                    : "bg-gray-100 text-gray-900"
                 }`}
                 required
               ></textarea>
@@ -79,10 +87,8 @@ const Contact = ({ userData, handleFormChange, handleSubmit, darkMode }) => {
           className={`${darkMode ? "bg-gray-800" : "bg-white"} rounded-lg p-6 shadow-lg flex flex-col justify-between`}
         >
           <h3 className="text-xl text-center font-semibold mb-6">Connect with Me</h3>
-
-          {/* Refactored flex-col layout on mobile and justify-around on larger screens */}
-          <div className="flex flex-col md:flex-row justify-around gap-6 text-center items-center mb-6">
-            <div>
+          <div className="flex flex-col gap-6 md:flex-row justify-around text-center items-center mb-6">
+            <div className="w-48">
               <FaEnvelope size={40} className="mx-auto mb-2 text-blue-500" />
               <p className="font-semibold">Email</p>
               <a
@@ -94,7 +100,7 @@ const Contact = ({ userData, handleFormChange, handleSubmit, darkMode }) => {
               </a>
             </div>
 
-            <div>
+            <div className="min-w-48">
               <FaLinkedin size={40} className="mx-auto mb-2 text-blue-500" />
               <p className="font-semibold">LinkedIn</p>
               <a
@@ -106,7 +112,7 @@ const Contact = ({ userData, handleFormChange, handleSubmit, darkMode }) => {
               </a>
             </div>
 
-            <div>
+            <div className="min-w-48">
               <FaGithub size={40} className="mx-auto mb-2 text-blue-500" />
               <p className="font-semibold">GitHub</p>
               <a
